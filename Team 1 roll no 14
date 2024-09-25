@@ -1,0 +1,18 @@
+//Write appropriate function prototype for the sketelal outlines show below //
+#include<stdio.h>
+long int funct1(int a, float b);// function prototype //
+main ()
+{
+int a;
+float b;
+long int c;
+....
+c=funct1(a,b);
+.......
+}
+long int funct1(int a, float b)
+{
+long int z;
+z=....;
+return (z);
+}
