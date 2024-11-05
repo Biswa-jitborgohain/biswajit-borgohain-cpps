@@ -2,7 +2,7 @@
 
 #define MAX_EMPLOYEES 100
 
-// Define the structure for Employee
+
 struct Employee {
     int id;
     char name[50];
@@ -10,7 +10,7 @@ struct Employee {
     float salary;
 };
 
-// Function to input employee details
+
 void inputEmployeeDetails(struct Employee employees[], int *count) {
     printf("Enter the number of employees: ");
     scanf("%d", count);
@@ -31,7 +31,7 @@ void inputEmployeeDetails(struct Employee employees[], int *count) {
     }
 }
 
-// Function to display employee details in a tabular format
+
 void displayEmployeeDetails(struct Employee employees[], int count) {
     printf("\n%-10s %-20s %-5s %-10s\n", "Emp ID", "Name", "Age", "Salary");
     printf("----------------------------------------------------\n");
