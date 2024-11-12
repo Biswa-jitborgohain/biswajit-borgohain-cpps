@@ -1,0 +1,175 @@
+\documentclass{beamer}
+
+% Theme and Color Customizations
+\usepackage{xcolor}
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{title}{fg=white, bg=blue!80!red}
+\setbeamercolor{frametitle}{bg=blue!50, fg=white}
+\setbeamercolor{structure}{fg=blue!70!black}
+\setbeamercolor{itemize item}{fg=blue!70!black}
+\setbeamercolor{block title}{bg=blue!50, fg=white}
+\setbeamerfont{frametitle}{size=\Large}
+
+\title{\textbf{Nested Loops in C Programming}}
+\author{Biswajit Borgohain}
+\institute{Roll No: 14, MCA 1st}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+\frame{\titlepage}
+
+\begin{frame}{Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction to Nested Loops}
+\begin{frame}{\textbf{What are Nested Loops?}}
+    \begin{itemize}
+        \item \textbf{Nested loops} are loops inside another loop. The inner loop is executed completely every time the outer loop runs one iteration.
+        \item Used for handling multi-dimensional data, repetitive patterns, and complex data processing.
+        \item Example Syntax:
+        \begin{block}{Nested Loop Syntax}
+            \texttt{for (initialization; condition; update) \{}\\
+            \texttt{\quad for (initialization; condition; update) \{}\\
+            \texttt{\quad \quad // Code to execute}\\
+            \texttt{\quad \}}\\
+            \texttt{\}}
+        \end{block}
+    \end{itemize}
+\end{frame}
+
+\section{Memory Representation}
+\begin{frame}{\textbf{How Nested Loops Work in Memory}}
+    \begin{itemize}
+        \item \textbf{Execution Flow:} The outer loop begins execution, and for each iteration of the outer loop, the inner loop runs to completion.
+        \item \textbf{Memory Pattern:} Imagine each iteration of the outer loop as a level; within each level, the inner loop iterates completely before the next outer loop level begins.
+    \end{itemize}
+
+    \begin{block}{Visualization of Nested Loop Execution}
+        \begin{itemize}
+            \item \textbf{Example:} Suppose we have an outer loop running 3 times and an inner loop running 2 times:
+            \begin{itemize}
+                \item \texttt{Outer Loop Iteration 1:}
+                \begin{itemize}
+                    \item Inner Loop Iteration 1
+                    \item Inner Loop Iteration 2
+                \end{itemize}
+                \item \texttt{Outer Loop Iteration 2:}
+                \begin{itemize}
+                    \item Inner Loop Iteration 1
+                    \item Inner Loop Iteration 2
+                \end{itemize}
+                \item \texttt{Outer Loop Iteration 3:}
+                \begin{itemize}
+                    \item Inner Loop Iteration 1
+                    \item Inner Loop Iteration 2
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Real-Life Example}
+\begin{frame}{\textbf{Real-Life Example of Nested Loops}}
+    \begin{itemize}
+        \item \textbf{Example: Generating Multiplication Tables}
+        \item Using nested loops to print multiplication tables from 1 to 5.
+    \end{itemize}
+    \begin{block}{C Code Example}
+        \texttt{\#include <stdio.h>}\\
+        \texttt{int main() \{}\\
+        \texttt{\\  int  i, j;}\\
+        \texttt{\ \ for (i = 1; i <= 5; i++) \{}\\
+        \texttt{\ \ \ \ for (j = 1; j <= 10; j++) \{}\\
+        \texttt{\ \ \ \ \ \ printf("\%d * \%d = \%d\textbackslash n", i, j, i * j);}\\
+        \texttt{\ \ \ \ \}}\\
+        \texttt{\ \ \ \ printf("\textbackslash n"); \ // New line for each table}\\
+        \texttt{\ \ \}}\\
+        \texttt{\ \ return 0;}\\
+        \texttt{\}}
+    \end{block}
+\end{frame}
+
+\section{Output of the Example}
+	\begin{frame}{\textbf{Output of Multiplication Table Code}}
+		\begin{itemize}
+			\item The output of the code will display multiplication tables from 1 to 5.
+			\item Space reserved for image showing the output in the console.
+		\end{itemize}
+		\begin{center}
+			% Leave space here for the image
+			\vspace{2cm}
+			\includegraphics[width=0.7\textwidth]{mul.png} % Add the image path here
+		\end{center}
+	\end{frame}
+
+\section{Implementation in C}
+\begin{frame}{\textbf{Implementing Nested Loops in C}}
+    \begin{itemize}
+        \item Example code for creating a pattern using nested loops.
+        
+    \end{itemize}
+    \begin{block}{Example Code}
+        \texttt{\#include <stdio.h>}\\
+        \texttt{int main() \{}\\
+        \texttt{\ \ int n = 3, i, j;}\\
+        \texttt{\ \ for (i = 1; i <= n; i++) \{}\\
+        \texttt{\ \ \ \ for (j = 1; j <= i; j++) \{}\\
+        \texttt{\ \ \ \ \ \ printf("* ");}\\
+        \texttt{\ \ \ \ \}}\\
+        \texttt{\ \ \ \ printf("\textbackslash n");}\\
+        \texttt{\ \ \}}\\
+        \texttt{\ \ return 0;}\\
+        \texttt{\}}
+    \end{block}
+\end{frame}
+	\section{Output of Pattern Code}
+	\begin{frame}{\textbf{Output of Pattern Code}}
+		\begin{itemize}
+			\item The output of the code will display a pattern as shown.
+			\item Space reserved for image showing the output in the console.
+		\end{itemize}
+		\begin{center}
+			% Leave space here for the image
+			\vspace{2cm}
+			\includegraphics[width=0.7\textwidth]{pat.png} % Add the image path here
+		\end{center}
+	\end{frame}
+\section{Advantages of Nested Loops}
+\begin{frame}{\textbf{Advantages of Using Nested Loops}}
+    \begin{itemize}
+        \item Efficiently handles multi-dimensional data (e.g., matrices).
+        \item Useful for generating patterns or tables.
+        \item Allows multiple layers of operations on data sets.
+    \end{itemize}
+\end{frame}
+
+\section{Limitations of Nested Loops}
+\begin{frame}{\textbf{Limitations of Nested Loops}}
+    \begin{itemize}
+        \item Can be computationally expensive for large datasets.
+        \item Higher nesting levels can make code complex and difficult to read.
+        \item May lead to inefficient memory usage in certain cases.
+    \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{\textbf{Conclusion}}
+    \begin{itemize}
+        \item Nested loops are essential for processing complex data structures and patterns.
+        \item Widely used in real-world applications like table generation, pattern creation, and matrix operations.
+        \item Use nested loops judiciously to balance readability and efficiency.
+    \end{itemize}
+\end{frame}
+
+% Thank You Page with Enhanced Color
+\frame{
+    \begin{center}
+        \vspace{1cm}
+        {\huge \textbf{\textcolor{orange}{Thank You!}}}
+    \end{center}
+}
+\end{document}
